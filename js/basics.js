@@ -83,5 +83,10 @@ while (int < 55) {
 }
 
 for (let i = 0; i < 10; i++){
+  if (i === 9){
+    break; // Останавливает цикл
+  } else if (i === 5){
+    continue; // Пропускает итерацию
+  }
   console.log(i);
 }
