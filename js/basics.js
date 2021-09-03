@@ -9,8 +9,8 @@ const myObj = {
   age: 34,
   isMarried: false
 };
-
-console.log(myObj.name); // Обращение к элементу объекта
+myObj.weight = 72; // Добавление ключа и значения в объект
+console.log(myObj.weight); // Обращение к элементу объекта
 
 // Массив
 let arr = ['plum.png', 'orange.jpg', 'apple.bmp'];
@@ -39,3 +39,49 @@ for(let i = 0; i <= answers.length; i++){
 // Интерполяция
 const category = 'toys';
 console.log(`https://ozon.com//${category}/5`);
+
+// Условия
+
+const num = 50;
+
+if (num == 49 ) {
+  console.log('Error');
+} else if (num == 100) {
+  console.log('Много');
+} else {
+  console.log('Ok');
+}
+
+// Тернарный оператор 
+
+(num === 50) ? console.log('Ok') : console.log('Error');
+
+// Switch аналог if else
+
+switch(num) {
+  case 49:
+    console.log('Error');
+    break;
+  case 100:
+    console.log('Много');
+    break;
+  case 50:
+    console.log('Ok');
+    break;  
+  default:
+    console.log('WTF');
+    break;
+}
+
+// Циклы
+
+let int = 50;
+
+while (int < 55) {
+  console.log(int);
+  int++;
+}
+
+for (let i = 0; i < 10; i++){
+  console.log(i);
+}
