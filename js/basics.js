@@ -90,3 +90,34 @@ for (let i = 0; i < 10; i++){
   }
   console.log(i);
 }
+
+// Функции
+
+function showFirstMessage(text) {
+  console.log(text);
+}
+
+showFirstMessage('Hello');
+
+function calc(a, b) {
+  return(a + b);
+}
+
+console.log(calc(4, 5));
+
+function ret() {
+  let num = 50;
+  return num;
+}
+const resultRet = ret();
+console.log(resultRet);
+// Такую функцию нельзя вызвать перед созданием
+const logger = function() {
+  console.log('Hello');
+};
+
+logger();
+
+// Стелочные функции
+
+const calculator = (a, b) => a + b;
