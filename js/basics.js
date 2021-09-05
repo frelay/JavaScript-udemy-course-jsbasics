@@ -121,3 +121,23 @@ logger();
 // Стелочные функции
 
 const calculator = (a, b) => a + b;
+
+// Методы и свойства строк и чисел
+// Свойства без круглых скобок
+const str = 'Hello world';
+console.log(str.length); // lenght возвращает длинну строки или массива
+console.log(str.toUpperCase()); // Возвращает строку в верхнем регистре
+console.log(str.toLowerCase());// Возвращает строку в нижнем регистре
+console.log(str.indexOf('ell')); // Возвращает индекс с которого начинается подстрока
+console.log(str.slice(0, 3)); // Возвращает срез по индексам
+console.log(str.substring(0, 3)); // Тоже самое что и slice только не поддерживает отрицательные индесы
+console.log(str.substr(0, 3)); // Второй параметр указывает сколько элементов вырезать
+
+// Свойства чисел
+
+const number = 12.5;
+const pixels = '12.2px';
+console.log(Math.round(number)); // Округляет число
+console.log(parseInt(pixels)); // Преобразует строку в число
+console.log(parseFloat(pixels)); // Преобразует строку в число c плавающей точкой
+
