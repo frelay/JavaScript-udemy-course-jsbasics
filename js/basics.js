@@ -122,6 +122,19 @@ logger();
 
 const calculator = (a, b) => a + b;
 
+// Callback функции, когда функция принимает параметром функцию
+
+function learnJS(lang, callback) {
+  console.log(`Я учу ${lang}`);
+  callback();
+}
+
+function done() {
+  console.log('Я прошел этот урок.');
+}
+
+learnJS('JavaScript', done); // колбэк в параметре без скобок
+
 // Методы и свойства строк и чисел
 // Свойства без круглых скобок
 const str = 'Hello world';
