@@ -154,3 +154,41 @@ console.log(Math.round(number)); // Округляет число
 console.log(parseInt(pixels)); // Преобразует строку в число
 console.log(parseFloat(pixels)); // Преобразует строку в число c плавающей точкой
 
+// Объекты
+
+const options = {
+  name: 'test',
+  width: 1024,
+  height: 1024,
+  colors: {
+    border: 'black',
+    bg: 'red'
+  },
+  makeTest: function() {
+    console.log('test');
+  }
+};
+
+console.log(options.name);
+options.makeTest();
+delete options.name; // удаление элемента 
+
+console.log(options);
+// Перебор объекта
+let counter = 0;
+for (let key in options) {
+  if (typeof(options[key]) === 'object') {
+    for (let i in options[key]) {
+      console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
+      counter++;
+    } 
+  } else {
+    console.log(`Свойство ${key} имеет значение ${options[key]}`);
+    counter++;
+  }  
+}
+console.log(Object.keys(options).length); // возвращает ключи объекта
+console.log(counter);
+// Деструктуризация объекта
+const {border, bg} = options.colors; // Деструктуризация
+console.log(border);
