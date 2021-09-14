@@ -192,3 +192,31 @@ console.log(counter);
 // Деструктуризация объекта
 const {border, bg} = options.colors; // Деструктуризация
 console.log(border);
+
+// Массивы
+
+const array = [1, 2, 3, 6, 8];
+array.pop(); // удаляет элемент с конца массива
+console.log(array);
+array.push(10); // добавляет элемент в конец массива
+console.log(array);
+
+// перебор массива
+for (let i = 0; i < array.length; i++) {
+  console.log(array[i]);
+}
+
+for (let value of array) {
+  console.log(value);
+}
+
+array.forEach(function(item, i, array){
+  console.log(`${i}: ${item} внутри массива ${array}`);
+});
+
+const string = "qqq, aaa, ttt";
+const strArray = string.split(', '); // делит строку на элементы массива по разделителю
+console.log(strArray);
+console.log(strArray.join(', ')); // собирает массив в строку по разделителю
+console.log(strArray.sort()); // сортирует массив
+
