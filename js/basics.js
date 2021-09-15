@@ -220,3 +220,50 @@ console.log(strArray);
 console.log(strArray.join(', ')); // собирает массив в строку по разделителю
 console.log(strArray.sort()); // сортирует массив
 
+// Копирование объектов и массивов
+
+const add = {
+  a: 10,
+  b: 15
+};
+
+const clone = Object.assign({}, add); // копируем в пустой объект, значения другого объекта
+
+clone.b = 20;
+
+console.log(add);
+console.log(clone);
+
+const oldArray = [1, 2, 3];
+const newArray = oldArray.slice();
+
+newArray[0] = 'aaa';
+
+console.log(oldArray);
+console.log(newArray);
+
+// spread оператор
+
+const video = ['youtube', 'vimeo', 'rutube'];
+const blogs = ['wordpress', 'livejournal', 'blogger'];
+const internet = [...video, ...blogs, 'vk', 'facebook']; // три точки типа вываливают элементы массива в новый массив
+console.log(internet);
+
+// spread оператор можно передавать в параметры функции
+
+const numArr = [1, 2, 3];
+
+function log(a, b, c) {
+  console.log(a);
+  console.log(b);
+  console.log(c);
+}
+
+log(...numArr);
+
+const q = {
+  one: 1,
+  two: 2
+};
+
+const newQ = {...q}; // копирование объектов и массивов можно тоже через spread оператор
