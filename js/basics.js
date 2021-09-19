@@ -23,16 +23,16 @@ console.log(result);
 // Модальное окно с полем для ввода, второй параметр добавляет 
 // значение по умолчанию
 const answer = prompt('Вам есть 18?', '18');
-console.log(typeof(answer)); // В переменную записывается всегда строка!
+console.log(typeof (answer)); // В переменную записывается всегда строка!
 
 // Запись данных в массив
 const answers = [];
-answers[0] = prompt('Как вас зовут?', ''); 
-answers[1] = prompt('Ваша фамилия?', ''); 
+answers[0] = prompt('Как вас зовут?', '');
+answers[1] = prompt('Ваша фамилия?', '');
 // Плюс преобразовывает строку в число
-answers[2] = +prompt('Сколько вам лет?', ''); 
+answers[2] = +prompt('Сколько вам лет?', '');
 // Перебор массива циклом for
-for(let i = 0; i <= answers.length; i++){
+for (let i = 0; i <= answers.length; i++) {
   console.log(answers[i]);
 }
 
@@ -44,7 +44,7 @@ console.log(`https://ozon.com//${category}/5`);
 
 const num = 50;
 
-if (num == 49 ) {
+if (num == 49) {
   console.log('Error');
 } else if (num == 100) {
   console.log('Много');
@@ -54,11 +54,11 @@ if (num == 49 ) {
 
 // Тернарный оператор 
 
-(num === 50) ? console.log('Ok') : console.log('Error');
+(num === 50) ? console.log('Ok'): console.log('Error');
 
 // Switch аналог if else
 
-switch(num) {
+switch (num) {
   case 49:
     console.log('Error');
     break;
@@ -67,7 +67,7 @@ switch(num) {
     break;
   case 50:
     console.log('Ok');
-    break;  
+    break;
   default:
     console.log('WTF');
     break;
@@ -82,10 +82,10 @@ while (int < 55) {
   int++;
 }
 
-for (let i = 0; i < 10; i++){
-  if (i === 9){
+for (let i = 0; i < 10; i++) {
+  if (i === 9) {
     break; // Останавливает цикл
-  } else if (i === 5){
+  } else if (i === 5) {
     continue; // Пропускает итерацию
   }
   console.log(i);
@@ -100,7 +100,7 @@ function showFirstMessage(text) {
 showFirstMessage('Hello');
 
 function calc(a, b) {
-  return(a + b);
+  return (a + b);
 }
 
 console.log(calc(4, 5));
@@ -112,7 +112,7 @@ function ret() {
 const resultRet = ret();
 console.log(resultRet);
 // Такую функцию нельзя вызвать перед созданием
-const logger = function() {
+const logger = function () {
   console.log('Hello');
 };
 
@@ -140,7 +140,7 @@ learnJS('JavaScript', done); // колбэк в параметре без ско
 const str = 'Hello world';
 console.log(str.length); // lenght возвращает длинну строки или массива
 console.log(str.toUpperCase()); // Возвращает строку в верхнем регистре
-console.log(str.toLowerCase());// Возвращает строку в нижнем регистре
+console.log(str.toLowerCase()); // Возвращает строку в нижнем регистре
 console.log(str.indexOf('ell')); // Возвращает индекс с которого начинается подстрока
 console.log(str.slice(0, 3)); // Возвращает срез по индексам
 console.log(str.substring(0, 3)); // Тоже самое что и slice только не поддерживает отрицательные индесы
@@ -164,7 +164,7 @@ const options = {
     border: 'black',
     bg: 'red'
   },
-  makeTest: function() {
+  makeTest: function () {
     console.log('test');
   }
 };
@@ -177,20 +177,23 @@ console.log(options);
 // Перебор объекта
 let counter = 0;
 for (let key in options) {
-  if (typeof(options[key]) === 'object') {
+  if (typeof (options[key]) === 'object') {
     for (let i in options[key]) {
       console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
       counter++;
-    } 
+    }
   } else {
     console.log(`Свойство ${key} имеет значение ${options[key]}`);
     counter++;
-  }  
+  }
 }
 console.log(Object.keys(options).length); // возвращает ключи объекта
 console.log(counter);
 // Деструктуризация объекта
-const {border, bg} = options.colors; // Деструктуризация
+const {
+  border,
+  bg
+} = options.colors; // Деструктуризация
 console.log(border);
 
 // Массивы
@@ -210,7 +213,7 @@ for (let value of array) {
   console.log(value);
 }
 
-array.forEach(function(item, i, array){
+array.forEach(function (item, i, array) {
   console.log(`${i}: ${item} внутри массива ${array}`);
 });
 
@@ -266,4 +269,20 @@ const q = {
   two: 2
 };
 
-const newQ = {...q}; // копирование объектов и массивов можно тоже через spread оператор
+const newQ = {
+  ...q
+}; // копирование объектов и массивов можно тоже через spread оператор
+
+// Основы ООП
+
+const soldier = {
+  health: 400,
+  armor: 100,
+  sayHello: function () {
+    console.log('Hello');
+  }
+};
+
+const soldierJohn = Object.create(soldier);
+soldierJohn.sayHello();
+console.log(soldierJohn.health);
