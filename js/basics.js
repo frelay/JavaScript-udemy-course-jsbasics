@@ -286,3 +286,33 @@ const soldier = {
 const soldierJohn = Object.create(soldier);
 soldierJohn.sayHello();
 console.log(soldierJohn.health);
+
+// Динамическая типизация
+
+// Преобразование в строку
+// 1
+console.log(typeof(String(null)));
+console.log(typeof(String(4)));
+// 2
+console.log(typeof(5 + '')); // конкатенация
+
+// Преобразование в число
+// 1
+console.log(typeof(Number('4')));
+// 2 
+console.log(typeof(+'4'));
+// 3
+console.log(typeof(parseInt('15px', 10)));
+
+
+// Преобразование в булиновый тип
+// 1
+// 0, '', null, undefined, NaN; - превращаются в false;
+let switcher = null;
+if (switcher) {
+  console.log('Works');
+}
+// 2
+console.log(typeof(Boolean('4')));
+// 3 
+console.log(typeof(!!'4'));
