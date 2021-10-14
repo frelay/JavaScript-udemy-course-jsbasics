@@ -135,6 +135,26 @@ function done() {
 
 learnJS('JavaScript', done); // колбэк в параметре без скобок
 
+// Функции-конструкторы(как конструктор класса)
+
+function User(name, id) {
+  this.name = name;
+  this.id = id;
+  this.human = true;
+  this.hello = () => {
+    console.log(`Hello ${this.name}`);
+  };
+}
+
+// Добавление метода объекту
+User.prototype.exit = function() {
+  console.log(`Пользователь ${this.name} ушел`);
+};
+
+const pavel = new User('Pavel', 34);
+pavel.hello();
+pavel.exit();
+
 // Методы и свойства строк и чисел
 // Свойства без круглых скобок
 const str = 'Hello world';
