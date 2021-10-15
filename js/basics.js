@@ -1,4 +1,4 @@
-'use strict';
+// 'use strict';
 
 let hello = 'hello';
 console.log(hello);
@@ -154,6 +154,24 @@ User.prototype.exit = function() {
 const pavel = new User('Pavel', 34);
 pavel.hello();
 pavel.exit();
+
+// Контекст вызова. This
+// 1. Обычная функция: this = window, но если use strict = undefined
+// 2. Контекст у методов объекта = сам объект
+// 3. this в конструкторах и классах = новый экземпляр объекта
+// 4. Ручная привязка this: call, apply, bind
+
+function showThis(a, b) {
+  console.log(this);
+  function sum(){
+    console.log(this);
+    return this.a + this.b;
+  }
+
+  console.log(sum());
+}
+
+showThis(4, 5); // покажет в консоль window
 
 // Методы и свойства строк и чисел
 // Свойства без круглых скобок
