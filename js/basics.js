@@ -354,3 +354,39 @@ if (switcher) {
 console.log(typeof(Boolean('4')));
 // 3 
 console.log(typeof(!!'4'));
+
+// Классы
+
+class Rectangle {
+  constructor(height, width) {
+    this.height = height;
+    this.width = width;
+  }
+
+  calcArea() {
+    return this.height * this.width;
+  }
+}
+
+const square = new Rectangle(10, 10);
+
+console.log(square.calcArea());
+
+// Наследование
+
+class ColoredRectangleWithText extends Rectangle {
+  constructor(height, width, text, bgColor) {
+    super(height, width); // Поля наследуются от родителя
+    this.text = text;
+    this.bgColor = bgColor;
+  }
+
+  showMyProps(){
+    console.log(`Текс: ${this.text}, цвет: ${this.bgColor}`);
+  }
+}
+
+const newSquare = new ColoredRectangleWithText(10, 10, 'Квадрат', 'red');
+
+console.log(newSquare.calcArea());
+newSquare.showMyProps();
