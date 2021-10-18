@@ -390,3 +390,18 @@ const newSquare = new ColoredRectangleWithText(10, 10, 'Квадрат', 'red');
 
 console.log(newSquare.calcArea());
 newSquare.showMyProps();
+
+// Rest оператор
+// с помощью него можно подавать много параметров
+const logi = function(a, b, ...rest) {
+  console.log(a, b, rest);
+};
+// те параметры что попали под rest будут массивом
+logi('basic', 'rest', 'operator', 'usage');
+// Параметр по умолчанию
+function calcOrDouble(number, basis = 2) {
+  console.log(number * basis);
+}
+
+calcOrDouble(2);
+
