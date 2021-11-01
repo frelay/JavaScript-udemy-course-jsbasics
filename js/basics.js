@@ -261,6 +261,44 @@ console.log(strArray);
 console.log(strArray.join(', ')); // собирает массив в строку по разделителю
 console.log(strArray.sort()); // сортирует массив
 
+// перебор массива метод filter(создает новый массив)
+
+const names = ['PavEl', 'KonsTantine', 'Vitaliy', 'Kate', 'Ivan'];
+
+const shortNames = names.filter((name) => {
+  return name.length < 5;
+});
+
+console.log(shortNames);
+
+// перебор массива методом map(создает новый массив)
+
+const normalNames = names.map((item) => {
+  return item.toLowerCase();
+});
+
+console.log(normalNames);
+
+// перебор массива методом every/some(возвращают true/false)
+
+const some = [4, 'dsf', 'kek'];
+// Хотя бы один элемент должен быть числом
+console.log(some.some((item) => {
+  return typeof(item) === 'number';
+}));
+// Все элементы должны быть числом
+console.log(some.every((item) => {
+  return typeof(item) === 'number';
+}));
+
+// перебор массива методом reduce
+
+const numsArr = [4, 12, 5, 90];
+
+const numsArrRes = numsArr.reduce((sum, current) => sum + current);
+
+console.log(numsArrRes);
+
 // Копирование объектов и массивов
 
 const add = {
